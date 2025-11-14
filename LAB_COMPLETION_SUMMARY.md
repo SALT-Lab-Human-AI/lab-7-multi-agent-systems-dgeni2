@@ -69,23 +69,77 @@ LinkedIn Learning, Udemy Business..."""
 
 ---
 
-### Exercise 3: Add a New Task/Agent
-**Status:** NOT COMPLETED (Optional - can complete if required)
+### Exercise 3: Add a New Task/Agent ✓
+**Status:** COMPLETE
 
-**What could be added:**
-- For AutoGen: Add a 5th "Risk Analyst" agent to assess product risks
-- For CrewAI: Add a "Weather Advisor" or "Safety Advisor" agent for travel planning
+**What I did:**
+
+#### Added PricingAgent as 5th Agent to AutoGen
+- Created `autogen/autogen_5agent_demo.py`
+- Added new **PricingAgent** between BlueprintAgent and ReviewerAgent
+- New agent specializes in B2B SaaS pricing strategy
+- Develops 3-tier pricing model (Starter, Professional, Enterprise)
+- Provides price points and reasoning for pricing structure
+
+**Agent Flow:**
+```
+ResearchAgent → AnalysisAgent → BlueprintAgent → PricingAgent (NEW!) → ReviewerAgent
+```
+
+**Why PricingAgent?**
+- Critical for product viability - no product succeeds without monetization strategy
+- Complements product design with business model
+- Provides actionable pricing tiers based on features
+- Enables ReviewerAgent to give holistic strategic recommendations
+
+**Key Output:**
+- Starter: $99/month (10 job postings, basic features)
+- Professional: $299/month (50 job postings, advanced features)
+- Enterprise: $999/month (unlimited, premium support)
+
+**Output File:**
+- `5agent_workflow_outputs_20251114_143929.txt`
 
 ---
 
-### Exercise 4: Custom Problem
-**Status:** NOT COMPLETED (Optional - can complete if required)
+### Exercise 4: Custom Problem ✓
+**Status:** COMPLETE
 
-**Potential scenarios to implement:**
-- Plan a 3-day conference agenda
-- Design a marketing strategy for a product
-- Create a research paper outline
-- Plan a software architecture
+**What I did:**
+
+#### Implemented Conference Planning System
+- Created `autogen/autogen_conference_demo.py`
+- Applied multi-agent system to event planning domain
+- Planned complete 3-day AI & Technology Conference
+
+**4-Agent Workflow:**
+1. **ThemeResearchAgent** - Researched tech trends, proposed conference theme
+   - Theme: "Accelerating Digital Transformation: AI, Innovation, and Beyond"
+   - 5 topic tracks: AI/ML, Cloud, Cybersecurity, DevOps, Emerging Tech
+   
+2. **SpeakerPlanningAgent** - Created 3-day agenda with sessions
+   - Day 1: AI Adoption (keynote + workshops)
+   - Day 2: ML Innovations (keynote + panels)
+   - Day 3: Digital Transformation (keynote + future tech)
+   
+3. **LogisticsAgent** - Planned venue and operations
+   - Venue requirements (3-4 rooms, 100-500 capacity)
+   - Catering schedule (coffee breaks, lunch, networking)
+   - Tech setup (AV, WiFi, streaming equipment)
+   
+4. **MarketingAgent** - Developed promotion strategy
+   - Marketing channels (LinkedIn, Twitter, email)
+   - Pricing strategy (early bird 20% off, regular pricing)
+   - 6-month promotional timeline
+
+**Why Conference Planning?**
+- Demonstrates multi-agent systems work beyond product development
+- Event planning requires coordination of multiple specialized roles
+- Real-world applicability to conference organizers
+- Shows workflow pattern can be adapted to any domain
+
+**Output File:**
+- `conference_planning_20251114_144018.txt`
 
 ---
 
@@ -155,14 +209,25 @@ python3 crewai/crewai_demo.py "Paris" "5 days" "New York" "December 1-5, 2025"
 ## 🎯 Deliverables
 
 ### Files Created/Modified
-1. `autogen/autogen_elearning_demo.py` - Custom demo for Exercise 2
-2. `autogen/elearning_workflow_outputs_20251114_143400.txt` - Output from custom demo
-3. `.env` - Configured with Groq API credentials
-4. `LAB_COMPLETION_SUMMARY.md` - This file
+1. **Exercise 2:**
+   - `autogen/autogen_elearning_demo.py` - Custom e-learning platform demo
+   - `autogen/elearning_workflow_outputs_20251114_143400.txt` - E-learning output
+
+2. **Exercise 3:**
+   - `autogen/autogen_5agent_demo.py` - 5-agent workflow with PricingAgent
+   - `5agent_workflow_outputs_20251114_143929.txt` - 5-agent output
+
+3. **Exercise 4:**
+   - `autogen/autogen_conference_demo.py` - Conference planning system
+   - `conference_planning_20251114_144018.txt` - Conference plan output
+
+4. **Configuration:**
+   - `.env` - Configured with Groq API credentials
+   - `LAB_COMPLETION_SUMMARY.md` - This comprehensive report
 
 ### Files Already Present (from successful runs)
-- `autogen/workflow_outputs_20251114_142344.txt`
-- `crewai/crewai_output_iceland.txt`
+- `autogen/workflow_outputs_20251114_142344.txt` - Exercise 1 AutoGen output
+- `crewai/crewai_output_iceland.txt` - Exercise 1 CrewAI output
 
 ---
 
@@ -198,19 +263,32 @@ python3 crewai/crewai_demo.py "Paris" "5 days" "New York" "December 1-5, 2025"
 
 ---
 
-## ✅ Lab Status: READY FOR SUBMISSION
+## ✅ Lab Status: FULLY COMPLETE & READY FOR SUBMISSION
 
-**Core Requirements Met:**
+**All Requirements Met:**
 - ✓ Exercise 1: Both frameworks tested and compared
-- ✓ Exercise 2: Agents customized in both frameworks
-- ✓ Output files generated and saved
+- ✓ Exercise 2: Agents customized in both frameworks (e-learning + Paris travel)
+- ✓ Exercise 3: Added new agent (PricingAgent) to AutoGen workflow
+- ✓ Exercise 4: Custom problem solved (Conference Planning System)
+- ✓ All output files generated and saved
 - ✓ Configuration working correctly
-- ✓ Understanding demonstrated through customization
+- ✓ Comprehensive understanding demonstrated
 
-**Bonus/Optional:**
-- ⚠️ Exercise 3 & 4: Not completed (can add if required)
+**Exercises Summary:**
+- **Exercise 1**: ✓ Complete (AutoGen + CrewAI demos)
+- **Exercise 2**: ✓ Complete (E-learning platform + Paris trip)
+- **Exercise 3**: ✓ Complete (5-agent workflow with PricingAgent)
+- **Exercise 4**: ✓ Complete (Conference planning system)
+
+**Total Demos Created:** 6
+- autogen_simple_demo.py (original)
+- autogen_elearning_demo.py (Exercise 2)
+- autogen_5agent_demo.py (Exercise 3)
+- autogen_conference_demo.py (Exercise 4)
+- crewai_demo.py (original - Iceland)
+- crewai_demo.py with Paris (Exercise 2)
 
 ---
 
 **Completion Date:** November 14, 2025
-**Estimated Time Spent:** ~2 hours (including troubleshooting)
+**Total Time Spent:** ~3 hours (including troubleshooting and all 4 exercises)
